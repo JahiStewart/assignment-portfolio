@@ -32,11 +32,8 @@ app.get('/',(req,res)=>{
                     {title: "First SAAS Website:",
                      link: "https://node-first-saas-website.azurewebsites.net" 
                     },
-                    {title: "First SAAS Website:",
-                     link: "https://node-first-saas-website.azurewebsites.net" 
-                    },
                     {title: "My Getting to Know Eachother:",
-                     link: "https://node-js-getting-to-know-eachother-jks.azurewebsites.net/" 
+                     link: "https://node-getting-to-know-eachother.azurewebsites.net" 
                     },
                     {title: "My Resume:",
                      link: "https://node-web-resume.azurewebsites.net" 
@@ -50,8 +47,11 @@ app.get('/',(req,res)=>{
                     {title: "Health Risk Calculator: ",
                      link: "https://se-health-insurance-calculator.azurewebsites.net/" 
                     },
+                    {title: "Final Project Proposal:",
+                     link: " https://final-project-proposal.azurewebsites.net/" 
+                    },
                     {title: "Barber Shop Site: ",
-                     link: "https://github.com/BrennanP01/QualityStudiosWebsite" 
+                     link: "https://qualitystudios.azurewebsites.net/" 
                     }
                 ],
 
