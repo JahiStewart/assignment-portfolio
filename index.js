@@ -29,12 +29,31 @@ app.engine('handlebars', hbs.engine)
 app.get('/',(req,res)=>{
     res.render('home', {
         assignments: [
-                    {title: "Health Risk Calculator: ",
-                     link: "http://localhost" 
+                    {title: "First SAAS Website:",
+                     link: "https://node-first-saas-website.azurewebsites.net" 
+                    },
+                    {title: "First SAAS Website:",
+                     link: "https://node-first-saas-website.azurewebsites.net" 
+                    },
+                    {title: "My Getting to Know Eachother:",
+                     link: "https://node-js-getting-to-know-eachother-jks.azurewebsites.net/" 
+                    },
+                    {title: "My Resume:",
+                     link: "https://node-web-resume.azurewebsites.net" 
+                    },
+                    {title: "Dice Roller:",
+                     link: "https://node-dice-roller.azurewebsites.net/" 
+                    },
+                    {title: "RegExp Tester: ",
+                     link: "https://node-regexp-tester-rg.azurewebsites.net/" 
                     },
                     {title: "Health Risk Calculator: ",
-                     link: ""
-                    }],
+                     link: "https://se-health-insurance-calculator.azurewebsites.net/" 
+                    },
+                    {title: "Barber Shop Site: ",
+                     link: "https://github.com/BrennanP01/QualityStudiosWebsite" 
+                    }
+                ],
 
     })
 })
