@@ -1,0 +1,50 @@
+body {
+    background-color: #e0ddd7;
+    font-family: 'Times New Roman', Times, serif ;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgb(51, 46, 54);
+    background-color: rgb(226, 231, 231);
+    margin: 1;
+    color:black;
+    display: block;
+}
+display-sites{
+    width: 345px;
+    padding: 10px;
+    border: 1px solid rgb(49, 40, 40);
+    border-top: none;
+    background-color: rgb(226, 231, 231);
+    margin: 0;
+    color:black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: px;
+}
+site-section {
+    padding: 10px;
+    border: 1px solid rgb(51, 46, 54);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: rgb(226, 231, 231);
+    margin: 1;
+    
+    color:black;
+    display: block;
+}
+site-title {
+    font-variant: small-caps;
+    text-transform: capitalize;
+    text-align: left;
+    font-weight: normal;
+}
+

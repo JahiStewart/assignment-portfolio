@@ -1,0 +1,13 @@
+<body>
+    <header>
+        <h2>Assignment Portfolio</h2>
+    </header>
+    <display-sites>
+        {{#each assignments}}
+            <site-section>
+                <site-title> {{this.title}}</site-title><br/>
+                <a href={{this.link}}>{{this.link}}</a><br/>
+            </site-section>
+        {{/each}}
+    </display-sites>
+</body>

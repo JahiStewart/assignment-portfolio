@@ -1,34 +1,45 @@
-const http = require('http')
-const fs = require('fs')
+// Used express to get the file to display
+var express = require('express')
+var app = express()
+const expressHandlebars = require('express-handlebars')
+const bodyParser = require('body-parser')
 const port = process.env.PORT || 3000
 
-function serveStaticFile(res, path, contentType, responseCode = 200) {
-  fs.readFile(__dirname + path, (err, data) => {
-    if(err) {
-      res.writeHead(500, { 'Content-Type': 'text/plain' })
-      return res.end('500 - Internal Error')
-    }
-    res.writeHead(responseCode, { 'Content-Type': contentType })
-    res.end(data)
-  })
-}
-
-const server = http.createServer((req,res) => {
-  // normalize url by removing querystring, optional trailing slash, and
-  // making lowercase
-  const path = req.url.replace(/\/?(?:\?.*)?$/, '').toLowerCase()
-  switch(path) {
-    case '':
-      serveStaticFile(res, '/home.html', 'text/html')
-      break
-    case '/backyard.png':
-        serveStaticFile(res, '/backyard.png', 'image/png')
-        break
-    default:
-      serveStaticFile(res, '/404.html', 'text/html', 404)
-      break
-  }
+var hbs = expressHandlebars.create({
+    defaultLayout: 'main'
+    //helpers: 
 })
 
-server.listen(port, () => console.log(`server started on port ${port}; ` +
-  'press Ctrl-C to terminate....'))
+app.engine('handlebars', hbs.engine)
+
+app.set('view engine', 'handlebars')
+// Gets the current directory, and adds the "public" file
+// This will display the html in the root directory of public. (no need to put it in the views folder)
+app.use(express.static(__dirname + '/public'))
+app.use(bodyParser.json())
+
+//HandleBar Helpers
+var hbs = expressHandlebars.create({
+    defaultLayout: 'main'
+    //helpers:
+})
+
+app.engine('handlebars', hbs.engine)
+
+app.get('/',(req,res)=>{
+    res.render('home', {
+        assignments: [
+                    {title: "Health Risk Calculator: ",
+                     link: "http://localhost" 
+                    },
+                    {title: "Health Risk Calculator: ",
+                     link: ""
+                    }],
+
+    })
+})
+
+app.listen(port, ()=>console.log(
+    `Express started on http://localhost:${port}; ` +
+    `press Ctrl-C to terminate.`
+))
